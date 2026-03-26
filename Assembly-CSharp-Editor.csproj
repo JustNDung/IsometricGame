@@ -47,7 +47,52 @@
     <Analyzer Include="C:\Program Files\Unity\Hub\Editor\6000.3.10f1\Editor\Data\Tools\BuildPipeline\Unity.SourceGenerators\Unity.UIToolkit.SourceGenerator.dll" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Packages\com.unity.cinemachine\Editor\Impulse\CinemachineImpulseSourceEditor.cs" />
+    <Compile Include="Packages\com.unity.cinemachine\Editor\Impulse\CinemachineImpulseDefinitionPropertyDrawer.cs" />
+    <Compile Include="Packages\com.unity.cinemachine\Editor\Editors\CinemachineTriggerActionEditor.cs" />
+    <Compile Include="Packages\com.unity.cinemachine\Editor\Utility\GameViewComposerGuides.cs" />
+    <Compile Include="Packages\com.unity.cinemachine\Editor\Upgrader\UpgradeObjectToCm3.Data.cs" />
+    <Compile Include="Packages\com.unity.cinemachine\Editor\Editors\CinemachineHardLookAtEditor.cs" />
+    <Compile Include="Packages\com.unity.cinemachine\Editor\PropertyDrawers\SplineAutoDollyPropertyDrawer.cs" />
+    <Compile Include="Packages\com.unity.cinemachine\Editor\Upgrader\UpgradeManagerInspectorHelpers.cs" />
+    <Compile Include="Packages\com.unity.cinemachine\Editor\Obsolete\CinemachineTool.cs" />
     <Compile Include="Assets\TutorialInfo\Scripts\Editor\ReadmeEditor.cs" />
+    <Compile Include="Packages\com.unity.cinemachine\Editor\PropertyDrawers\SplineSettingsPropertyDrawer.cs" />
+    <Compile Include="Packages\com.unity.cinemachine\Editor\Menus\CinemachineMenu.cs" />
+    <Compile Include="Packages\com.unity.cinemachine\Editor\Obsolete\CinemachineFramingTransposerEditor.cs" />
+    <Compile Include="Packages\com.unity.cinemachine\Editor\Obsolete\VcamTargetPropertyDrawer.cs" />
+    <Compile Include="Packages\com.unity.cinemachine\Editor\Upgrader\UpgradeObjectToCm3.cs" />
+    <Compile Include="Packages\com.unity.cinemachine\Editor\Upgrader\CinemachineUpgradeManager.cs" />
+    <Compile Include="Packages\com.unity.cinemachine\Editor\Editors\CinemachineVirtualCameraBaseEditor.cs" />
+    <Compile Include="Packages\com.unity.cinemachine\Editor\PropertyDrawers\FoldoutWithEnabledButtonPropertyDrawer.cs" />
+    <Compile Include="Packages\com.unity.cinemachine\Editor\Editors\CinemachineOrbitalFollowEditor.cs" />
+    <Compile Include="Packages\com.unity.cinemachine\Editor\PropertyDrawers\NoiseSettingsPropertyDrawer.cs" />
+    <Compile Include="Packages\com.unity.cinemachine\Editor\Utility\CinemachineSceneToolHelpers.cs" />
+    <Compile Include="Packages\com.unity.cinemachine\Editor\PropertyDrawers\OutputChannelsPropertyDrawer.cs" />
+    <Compile Include="Packages\com.unity.cinemachine\Editor\Editors\CinemachineBasicMultiChannelPerlinEditor.cs" />
+    <Compile Include="Packages\com.unity.cinemachine\Editor\PropertyDrawers\DelayedVectorPropertyDrawer.cs" />
+    <Compile Include="Packages\com.unity.cinemachine\Editor\Editors\CinemachineMixingCameraEditor.cs" />
+    <Compile Include="Packages\com.unity.cinemachine\Editor\Editors\CinemachineThirdPersonFollowEditor.cs" />
+    <Compile Include="Packages\com.unity.cinemachine\Editor\PropertyDrawers\GroupTargetPropertyDrawer.cs" />
+    <Compile Include="Packages\com.unity.cinemachine\Editor\PostProcessing\CinemachineVolumeSettingsEditor.cs" />
+    <Compile Include="Packages\com.unity.cinemachine\Editor\Windows\CinemachineComposerPrefs.cs" />
+    <Compile Include="Packages\com.unity.cinemachine\Editor\PropertyDrawers\BlendDefinitionPropertyDrawer.cs" />
+    <Compile Include="Packages\com.unity.cinemachine\Editor\Editors\CinemachineRotationComposerEditor.cs" />
+    <Compile Include="Packages\com.unity.cinemachine\Editor\Editors\CinemachineCameraManagerEventsEditor.cs" />
+    <Compile Include="Packages\com.unity.cinemachine\Editor\Utility\CmCameraInspectorUtility.cs" />
+    <Compile Include="Packages\com.unity.cinemachine\Editor\PropertyDrawers\HideFoldoutPropertyDrawer.cs" />
+    <Compile Include="Packages\com.unity.cinemachine\Editor\Utility\CmPipelineComponentInspectorUtility.cs" />
+    <Compile Include="Packages\com.unity.cinemachine\Editor\Editors\CinemachineFollowEditor.cs" />
+    <Compile Include="Packages\com.unity.cinemachine\Editor\Editors\CinemachineBrainEditor.cs" />
+    <Compile Include="Packages\com.unity.cinemachine\Editor\Windows\CinemachineSplineDollyPrefs.cs" />
+    <Compile Include="Packages\com.unity.cinemachine\Editor\Impulse\CinemachineImpulseEnvelopePropertyDrawer.cs" />
+    <Compile Include="Packages\com.unity.cinemachine\Editor\Utility\CinemachineChannelNames.cs" />
+    <Compile Include="Packages\com.unity.cinemachine\Editor\Editors\CinemachineGroupFramingEditor.cs" />
+    <Compile Include="Packages\com.unity.cinemachine\Editor\Obsolete\VcamStageEditor.cs" />
+    <Compile Include="Packages\com.unity.cinemachine\Editor\Editors\CinemachineBlenderSettingsEditor.cs" />
+    <Compile Include="Packages\com.unity.cinemachine\Editor\Impulse\CinemachineImpulseListenerEditor.cs" />
+    <None Include="Packages\com.unity.cinemachine\Editor\EditorResources\StdLib.hlsl" />
+    <None Include="Packages\com.unity.cinemachine\Editor\EditorResources\CMWaveform.compute" />
     <Reference Include="UnityEngine">
       <HintPath>C:\Program Files\Unity\Hub\Editor\6000.3.10f1\Editor\Data\Managed\UnityEngine\UnityEngine.dll</HintPath>
     </Reference>
@@ -1055,14 +1100,6 @@
     <ProjectReference Include="Assembly-CSharp.csproj">
       <Project>{8c016e67-a1b6-0189-c77a-a53185be81cf}</Project>
       <Name>Assembly-CSharp</Name>
-    </ProjectReference>
-    <ProjectReference Include="Unity.Cinemachine.Editor.csproj">
-      <Project>{dc040bd8-5e11-a7c0-7115-be3f128eb8cc}</Project>
-      <Name>Unity.Cinemachine.Editor</Name>
-    </ProjectReference>
-    <ProjectReference Include="Unity.Cinemachine.csproj">
-      <Project>{ce6eb3c8-1958-c605-b46c-98216a135a8e}</Project>
-      <Name>Unity.Cinemachine</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
