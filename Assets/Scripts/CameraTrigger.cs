@@ -20,9 +20,13 @@ public class CameraTrigger : MonoBehaviour
         if (_isPlayerInside && !_isTransitioning && Input.GetKeyDown(KeyCode.F))
         {
             if (!_isFocused)
+            {
                 StartCoroutine(FocusWithDelay());
+            }
             else
+            {
                 ExitCamera();
+            }
         }
     }
 
@@ -43,6 +47,7 @@ public class CameraTrigger : MonoBehaviour
 
         _isFocused = true;
         _isTransitioning = false;
+        playerController.gameObject.SetActive(false);
 
         Debug.Log("Zoom vào thí nghiệm 🎬");
     }
@@ -71,6 +76,7 @@ public class CameraTrigger : MonoBehaviour
     {
         yield return new WaitForSeconds(0.2f);
         _isTransitioning = false;
+        playerController.gameObject.SetActive(true);
     }
 
     private void OnTriggerEnter(Collider other)
