@@ -1,131 +1,218 @@
-﻿namespace UI
+﻿using UnityEngine;
+
+namespace UI
 {
-    using UnityEngine;
-
-public class WorldUIFollower : MonoBehaviour
-{
-    public enum FollowMode
+    public class WorldUIFollower : MonoBehaviour
     {
-        Transform,      // bám vào Transform (object / empty point)
-        WorldPosition,  // bám vào 1 vị trí cố định trong world
-        LocalPoint      // bám vào 1 điểm local trong object
-    }
-
-    [Header("Follow Settings")]
-    public FollowMode followMode = FollowMode.Transform;
-
-    public Transform targetTransform;
-    public Vector3 worldPosition;
-    public Vector3 localPoint; // dùng khi follow 1 điểm trên object
-
-    [Header("UI")]
-    public RectTransform uiElement;
-    public Camera cam;
-
-    [Header("Offset")]
-    public Vector3 worldOffset;
-    public Vector2 screenOffset;
-
-    [Header("Behavior")]
-    public bool hideWhenBehind = true;
-    public bool smoothFollow = true;
-    public float smoothSpeed = 10f;
-
-    [Header("Scale With Distance")]
-    public bool scaleByDistance = false;
-    public float scaleMultiplier = 10f;
-    public Vector2 scaleClamp = new Vector2(0.5f, 1.5f);
-
-    private Vector3 velocity;
-
-    void LateUpdate()
-    {
-        if (cam == null || uiElement == null) return;
-
-        Vector3 worldPos = GetWorldPosition();
-        Vector3 screenPos = cam.WorldToScreenPoint(worldPos);
-
-        // Ẩn nếu sau camera
-        if (hideWhenBehind && screenPos.z < 0)
+        public enum FollowMode
         {
-            if (uiElement.gameObject.activeSelf)
-                uiElement.gameObject.SetActive(false);
-            return;
+            Transform,
+            WorldPosition,
+            LocalPoint
         }
 
-        if (!uiElement.gameObject.activeSelf)
-            uiElement.gameObject.SetActive(true);
+        [Header("Follow Settings")]
+        public FollowMode followMode = FollowMode.Transform;
 
-        // Thêm offset screen
-        screenPos += (Vector3)screenOffset;
+        public Transform targetTransform;
+        public Vector3 worldPosition;
+        public Vector3 localPoint;
 
-        // Smooth hoặc snap
-        if (smoothFollow)
+        [Header("UI")]
+        public RectTransform uiElement;
+        public Camera cam;
+
+        [Header("Offset")]
+        public Vector3 worldOffset;
+        public Vector2 screenOffset;
+
+        [Header("Behavior")]
+        public bool hideWhenBehind = true;
+        public bool smoothFollow = true;
+
+        [Header("Smooth Settings")]
+        public float positionSmoothTime = 0.05f;
+        public float alphaSmoothTime = 0.1f;
+        public float scaleSmoothTime = 0.1f;
+
+        [Header("Scale With Distance")]
+        public bool scaleByDistance = false;
+        public float scaleMultiplier = 10f;
+        public Vector2 scaleClamp = new Vector2(0.5f, 1.5f);
+
+        // Internal
+        private Vector3 positionVelocity;
+        private float alphaVelocity;
+        private float scaleVelocity;
+
+        private Canvas canvas;
+        private CanvasGroup canvasGroup;
+
+        void Awake()
         {
-            uiElement.position = Vector3.Lerp(
-                uiElement.position,
+            if (uiElement == null)
+                uiElement = GetComponent<RectTransform>();
+
+            canvas = uiElement.GetComponentInParent<Canvas>();
+
+            canvasGroup = uiElement.GetComponent<CanvasGroup>();
+            if (canvasGroup == null)
+                canvasGroup = uiElement.gameObject.AddComponent<CanvasGroup>();
+        }
+
+        void LateUpdate()
+        {
+            if (cam == null || uiElement == null) return;
+
+            Vector3 worldPos = GetWorldPosition();
+            Vector3 screenPos = cam.WorldToScreenPoint(worldPos);
+
+            bool isBehind = screenPos.z < 0;
+
+            // ===== POSITION =====
+            screenPos += (Vector3)screenOffset;
+
+            if (canvas.renderMode == RenderMode.ScreenSpaceOverlay)
+            {
+                UpdatePositionOverlay(screenPos);
+            }
+            else
+            {
+                UpdatePositionCamera(screenPos);
+            }
+
+            // ===== FADE =====
+            if (hideWhenBehind)
+            {
+                float targetAlpha = isBehind ? 0f : 1f;
+
+                canvasGroup.alpha = Mathf.SmoothDamp(
+                    canvasGroup.alpha,
+                    targetAlpha,
+                    ref alphaVelocity,
+                    alphaSmoothTime
+                );
+
+                uiElement.gameObject.SetActive(canvasGroup.alpha > 0.01f);
+            }
+
+            // ===== SCALE =====
+            UpdateScale(screenPos, isBehind);
+        }
+
+        // ================= POSITION =================
+
+        void UpdatePositionOverlay(Vector3 screenPos)
+        {
+            if (smoothFollow)
+            {
+                uiElement.position = Vector3.SmoothDamp(
+                    uiElement.position,
+                    screenPos,
+                    ref positionVelocity,
+                    positionSmoothTime
+                );
+            }
+            else
+            {
+                uiElement.position = screenPos;
+            }
+        }
+
+        void UpdatePositionCamera(Vector3 screenPos)
+        {
+            Vector2 localPos;
+            RectTransformUtility.ScreenPointToLocalPointInRectangle(
+                canvas.transform as RectTransform,
                 screenPos,
-                Time.deltaTime * smoothSpeed
-            );
-        }
-        else
-        {
-            uiElement.position = screenPos;
-        }
-
-        // Scale theo khoảng cách
-        if (scaleByDistance)
-        {
-            float scale = Mathf.Clamp(
-                scaleMultiplier / screenPos.z,
-                scaleClamp.x,
-                scaleClamp.y
+                cam,
+                out localPos
             );
 
-            uiElement.localScale = Vector3.one * scale;
+            if (smoothFollow)
+            {
+                uiElement.localPosition = Vector3.SmoothDamp(
+                    uiElement.localPosition,
+                    localPos,
+                    ref positionVelocity,
+                    positionSmoothTime
+                );
+            }
+            else
+            {
+                uiElement.localPosition = localPos;
+            }
         }
-    }
 
-    Vector3 GetWorldPosition()
-    {
-        switch (followMode)
+        // ================= SCALE =================
+
+        void UpdateScale(Vector3 screenPos, bool isBehind)
         {
-            case FollowMode.Transform:
-                if (targetTransform != null)
-                    return targetTransform.position + worldOffset;
-                break;
+            float targetScale = isBehind ? 0.8f : 1f;
 
-            case FollowMode.WorldPosition:
-                return worldPosition + worldOffset;
+            if (scaleByDistance && screenPos.z > 0)
+            {
+                float distanceScale = Mathf.Clamp(
+                    scaleMultiplier / screenPos.z,
+                    scaleClamp.x,
+                    scaleClamp.y
+                );
 
-            case FollowMode.LocalPoint:
-                if (targetTransform != null)
-                    return targetTransform.TransformPoint(localPoint + worldOffset);
-                break;
+                targetScale *= distanceScale;
+            }
+
+            float currentScale = Mathf.SmoothDamp(
+                uiElement.localScale.x,
+                targetScale,
+                ref scaleVelocity,
+                scaleSmoothTime
+            );
+
+            uiElement.localScale = Vector3.one * currentScale;
         }
 
-        return Vector3.zero;
-    }
+        // ================= WORLD POSITION =================
 
-    // ===== PUBLIC API =====
+        Vector3 GetWorldPosition()
+        {
+            switch (followMode)
+            {
+                case FollowMode.Transform:
+                    if (targetTransform != null)
+                        return targetTransform.position + worldOffset;
+                    break;
 
-    public void SetTarget(Transform t)
-    {
-        followMode = FollowMode.Transform;
-        targetTransform = t;
-    }
+                case FollowMode.WorldPosition:
+                    return worldPosition + worldOffset;
 
-    public void SetWorldPosition(Vector3 pos)
-    {
-        followMode = FollowMode.WorldPosition;
-        worldPosition = pos;
-    }
+                case FollowMode.LocalPoint:
+                    if (targetTransform != null)
+                        return targetTransform.TransformPoint(localPoint + worldOffset);
+                    break;
+            }
 
-    public void SetLocalPoint(Transform t, Vector3 localPos)
-    {
-        followMode = FollowMode.LocalPoint;
-        targetTransform = t;
-        localPoint = localPos;
+            return Vector3.zero;
+        }
+
+        // ================= API =================
+
+        public void SetTarget(Transform t)
+        {
+            followMode = FollowMode.Transform;
+            targetTransform = t;
+        }
+
+        public void SetWorldPosition(Vector3 pos)
+        {
+            followMode = FollowMode.WorldPosition;
+            worldPosition = pos;
+        }
+
+        public void SetLocalPoint(Transform t, Vector3 localPos)
+        {
+            followMode = FollowMode.LocalPoint;
+            targetTransform = t;
+            localPoint = localPos;
+        }
     }
-}
 }

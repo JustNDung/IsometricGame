@@ -1,4 +1,5 @@
 using System.Collections;
+using UI;
 using UnityEngine;
 using Unity.Cinemachine;
 
@@ -6,6 +7,7 @@ public class CameraTrigger : MonoBehaviour
 {
     public CinemachineCamera experimentCam;
     public CinemachineCamera exploreCam;
+    [SerializeField] private ExperimentUI experimentUI;
 
     [Header("Cinematic Settings")]
     public float zoomDelay = 0.25f; // delay trước khi zoom
@@ -48,12 +50,14 @@ public class CameraTrigger : MonoBehaviour
         _isFocused = true;
         _isTransitioning = false;
         playerController.gameObject.SetActive(false);
+        experimentUI.gameObject.SetActive(true);
 
         Debug.Log("Zoom vào thí nghiệm 🎬");
     }
 
     void ExitCamera()
     {
+        experimentUI.gameObject.SetActive(false);
         _isTransitioning = true;
 
         // 👉 trả camera về explore
