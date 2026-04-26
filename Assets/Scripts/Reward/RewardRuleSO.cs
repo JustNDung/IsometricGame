@@ -1,4 +1,6 @@
-﻿namespace DefaultNamespace
+﻿
+
+namespace Reward
 {
     using UnityEngine;
 

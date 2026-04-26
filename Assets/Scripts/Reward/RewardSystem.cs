@@ -1,4 +1,5 @@
-﻿namespace DefaultNamespace
+﻿
+namespace Reward
 {
     using System.Collections.Generic;
     using UnityEngine;

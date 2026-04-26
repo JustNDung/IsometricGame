@@ -1,4 +1,6 @@
-﻿namespace DefaultNamespace.SpecificRewards.Lever
+﻿
+
+namespace Reward.SpecificRewards.Lever
 {
     using UnityEngine;
 

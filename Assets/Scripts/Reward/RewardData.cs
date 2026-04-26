@@ -1,4 +1,4 @@
-﻿namespace DefaultNamespace
+﻿namespace Reward
 {
     [System.Serializable]
     public struct RewardData

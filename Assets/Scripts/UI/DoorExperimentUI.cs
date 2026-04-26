@@ -1,6 +1,6 @@
-﻿using System;
-using DefaultNamespace;
-using DefaultNamespace.AllMessages;
+﻿
+using MessageDispatcher;
+using MessageDispatcher.AllMessages;
 using UI.UI;
 using UnityEngine;
 using UnityEngine.UI;
@@ -14,14 +14,14 @@ namespace UI
         
         private void OnEnable()
         {
-            MessageDispatcher.Subscribe<DoorExperimentUIDisplayMessage>(Show);
-            MessageDispatcher.Subscribe<DoorExperimentUIHideMessage>(Hide);
+            MessageDispatcher.MessageDispatcher.Subscribe<DoorExperimentUIDisplayMessage>(Show);
+            MessageDispatcher.MessageDispatcher.Subscribe<DoorExperimentUIHideMessage>(Hide);
         }
         
         private void OnDisable()
         {
-            MessageDispatcher.Unsubscribe<DoorExperimentUIDisplayMessage>(Show);
-            MessageDispatcher.Unsubscribe<DoorExperimentUIHideMessage>(Hide);
+            MessageDispatcher.MessageDispatcher.Unsubscribe<DoorExperimentUIDisplayMessage>(Show);
+            MessageDispatcher.MessageDispatcher.Unsubscribe<DoorExperimentUIHideMessage>(Hide);
         }
         
         public override void Show(IMessage message)

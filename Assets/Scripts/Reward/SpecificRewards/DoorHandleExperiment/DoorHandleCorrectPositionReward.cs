@@ -1,4 +1,6 @@
-﻿namespace DefaultNamespace.SpecificRewards.DoorHandleExperiment
+﻿
+
+namespace Reward.SpecificRewards.DoorHandleExperiment
 {
     using UnityEngine;
 

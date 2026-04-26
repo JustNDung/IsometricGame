@@ -1,6 +1,6 @@
 ﻿using UI;
 
-namespace DefaultNamespace.AllMessages
+namespace MessageDispatcher.AllMessages
 {
     public class DoorExperimentUIDisplayMessage : IMessage
     {

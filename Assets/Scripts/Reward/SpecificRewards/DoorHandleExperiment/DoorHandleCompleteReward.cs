@@ -1,4 +1,6 @@
-﻿namespace DefaultNamespace.SpecificRewards.DoorHandleExperiment
+﻿
+
+namespace Reward.SpecificRewards.DoorHandleExperiment
 {
     using UnityEngine;
     [CreateAssetMenu(menuName = "Reward/Rules/Handle/Complete")]
@@ -7,7 +9,7 @@
         public override bool Evaluate(RewardEvent e)
         {
             return e.experimentId == "handle"
-                   && e.actionId == "complete"
+                   && e.actionId == "complete"  
                    && e.success;
         }
 

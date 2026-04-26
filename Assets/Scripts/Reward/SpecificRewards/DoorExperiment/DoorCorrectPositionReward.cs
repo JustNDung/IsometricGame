@@ -1,4 +1,6 @@
-﻿namespace DefaultNamespace.SpecificRewards
+﻿
+
+namespace Reward.SpecificRewards.DoorExperiment
 {
     using UnityEngine;
     [CreateAssetMenu(menuName = "Reward/Rules/Door/CorrectPosition")]

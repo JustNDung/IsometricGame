@@ -1,4 +1,4 @@
-﻿namespace DefaultNamespace.AllMessages
+﻿namespace MessageDispatcher.AllMessages
 {
     public class TriggerZoneExitMessage : IMessage
     {

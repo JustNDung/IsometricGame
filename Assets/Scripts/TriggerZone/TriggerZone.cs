@@ -1,5 +1,5 @@
-﻿using DefaultNamespace;
-using DefaultNamespace.AllMessages;
+﻿
+using MessageDispatcher.AllMessages;
 using UnityEngine;
 
 namespace TriggerZone
@@ -13,7 +13,7 @@ namespace TriggerZone
         {
             if (other.CompareTag("Player"))
             {
-                MessageDispatcher.Publish(new TriggerZoneEnterMessage(zoneType));
+                MessageDispatcher.MessageDispatcher.Publish(new TriggerZoneEnterMessage(zoneType));
             }
         }
 
@@ -21,7 +21,7 @@ namespace TriggerZone
         {
             if (other.CompareTag("Player"))
             {
-                MessageDispatcher.Publish(new TriggerZoneExitMessage(zoneType));
+                MessageDispatcher.MessageDispatcher.Publish(new TriggerZoneExitMessage(zoneType));
             }
         }
     }

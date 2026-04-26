@@ -1,4 +1,4 @@
-namespace DefaultNamespace
+namespace Reward
 {
     public struct RewardEvent
     {

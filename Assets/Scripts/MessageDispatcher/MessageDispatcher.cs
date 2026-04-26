@@ -1,4 +1,4 @@
-﻿namespace DefaultNamespace
+﻿namespace MessageDispatcher
 {
     using System;
     using System.Collections.Generic;

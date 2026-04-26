@@ -1,4 +1,5 @@
-﻿namespace DefaultNamespace.SpecificRewards.WrenchExperiment
+﻿
+namespace Reward.SpecificRewards.WrenchExperiment
 {
     using UnityEngine;
     [CreateAssetMenu(menuName = "Reward/Rules/Wrench/LongerDistance")]
