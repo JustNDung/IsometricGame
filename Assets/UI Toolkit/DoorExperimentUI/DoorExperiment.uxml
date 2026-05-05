@@ -1,5 +1,6 @@
 <ui:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
     <Style src="project://database/Assets/UI%20Toolkit/Panel/PanelStyle.uss?fileID=7433441132597879392&amp;guid=4371b5b2c81621242bc382ea26c5ab6f&amp;type=3#PanelStyle"/>
+    <Style src="project://database/Assets/UI%20Toolkit/ForceVector/ForceVector.uss?fileID=7433441132597879392&amp;guid=86b68e4863dd60045b9c8c6c95c0e0b6&amp;type=3#ForceVector"/>
     <ui:VisualElement name="HingeInfoPanel" class="root-container" style="top: 648px; right: 1095px;">
         <ui:VisualElement name="Marker" class="marker-base">
             <ui:VisualElement class="marker-dot"/>
@@ -27,5 +28,9 @@
                 <ui:Button text="XÁC NHẬN" class="btn-primary"/>
             </ui:VisualElement>
         </ui:VisualElement>
+    </ui:VisualElement>
+    <ui:VisualElement name="force-vector-container" class="force-vector-container" style="top: 652px; left: 812px;">
+        <ui:VisualElement name="force-vector-line" class="force-vector-line" style="width: 62px;"/>
+        <ui:VisualElement name="force-vector-arrow" class="force-vector-arrow"/>
     </ui:VisualElement>
 </ui:UXML>

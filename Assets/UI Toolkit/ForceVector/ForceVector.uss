@@ -1,0 +1,28 @@
+.force-vector-container {
+    position: absolute;
+    flex-direction: row;
+    align-items: center;
+    /* Đặt tâm xoay ở đầu bên trái của container */
+    transform-origin: left center;
+}
+
+.force-vector-line {
+    height: 4px; /* Độ dày của vector */
+    background-color: #FF0000;
+    width: 50px; /* Độ dài mặc định, sẽ bị ghi đè bởi C# */
+}
+
+.force-vector-arrow {
+    width: 0;
+    height: 0;
+    /* Mẹo tạo hình tam giác bằng border trong UI Toolkit */
+    border-top-width: 8px;
+    border-bottom-width: 8px;
+    border-left-width: 16px;
+    border-right-width: 0;
+
+    /* Màu trong suốt cho trên/dưới, chỉ giữ màu cho viền trái */
+    border-top-color: rgba(0, 0, 0, 0);
+    border-bottom-color: rgba(0, 0, 0, 0);
+    border-left-color: #FF0000;
+}

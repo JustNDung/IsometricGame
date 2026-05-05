@@ -4530,6 +4530,8 @@ MonoBehaviour:
   currentForce: {x: 0, y: 0}
   hingeStatus: "\u1ED4n \u0111\u1ECBnh"
   handleStatus: "S\u1EB5n s\xE0ng"
+  forceVisualScale: 1
+  forceColor: {r: 1, g: 0, b: 0, a: 1}
 --- !u!1001 &1590477190
 PrefabInstance:
   m_ObjectHideFlags: 0
