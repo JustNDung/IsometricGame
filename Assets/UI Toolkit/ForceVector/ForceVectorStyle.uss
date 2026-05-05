@@ -1,0 +1,49 @@
+/* Gốc của mũi tên đặt tại vị trí tác động */
+.force-container {
+    position: absolute;
+    flex-direction: row;
+    align-items: center;
+    transform-origin: left center;
+}
+
+/* Nhãn chỉ số lực phong cách HUD */
+.force-label {
+    color: #00f2ff;
+    -unity-font-style: bold;
+    font-size: 14px;
+    margin-right: 12px;
+    background-color: rgba(15, 23, 42, 0.8);
+    padding: 3px 10px;
+    border-radius: 5px;
+    border-width: 1px;
+    border-color: #00f2ff;
+    -unity-text-align: middle-center;
+}
+
+.arrow-body {
+    flex-direction: row;
+    align-items: center;
+}
+
+/* Thân mũi tên - Dùng màu solid để C# điều khiển mượt hơn */
+.arrow-shaft {
+    height: 8px;
+    width: 60px; /* C# sẽ thay đổi giá trị này */
+    background-color: #00d2ff;
+    border-radius: 4px 0 0 4px;
+    /* Hiệu ứng mượt khi lực thay đổi đột ngột */
+    transition-duration: 0.1s;
+}
+
+/* Đầu mũi tên hình tam giác nhọn */
+.arrow-head {
+    width: 0;
+    height: 0;
+    border-left-width: 16px;
+    border-top-width: 10px;
+    border-bottom-width: 10px;
+    border-left-color: #00d2ff;
+    border-top-color: transparent;
+    border-bottom-color: transparent;
+    margin-left: -1px; /* Khớp khít với thân */
+}
