@@ -42,5 +42,9 @@ public class DoorExperimentUIController : MonoBehaviour
 
         // Cập nhật UI Vector lực dựa trên thông số currentForce từ Inspector
         _forceVector?.UpdateVectorFromForce(currentForce, forceVisualScale, forceColor);
+        
+        // THÊM: Hiển thị độ lớn của lực (Làm tròn 1 chữ số thập phân nếu cần)
+        float currentMagnitude = Mathf.Round(currentForce.magnitude * 10f) / 10f;
+        _forceVector?.SetLabelText($"F = {currentMagnitude}");
     }
 }

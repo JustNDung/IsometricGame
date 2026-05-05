@@ -1,7 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
 <ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
-    <Style src="project://database/Assets/UI%20Toolkit/ForceVector/ForceVector.uss?fileID=7433441132597879392&amp;guid=86b68e4863dd60045b9c8c6c95c0e0b6&amp;type=3#ForceVector"/>
+    <Style src="ForceVector.uss"/>
     <ui:VisualElement name="force-vector-container" class="force-vector-container">
         <ui:VisualElement name="force-vector-line" class="force-vector-line"/>
         <ui:VisualElement name="force-vector-arrow" class="force-vector-arrow"/>
+        <ui:Label name="force-vector-label" class="force-vector-label" text="F = 0" />
     </ui:VisualElement>
 </ui:UXML>
