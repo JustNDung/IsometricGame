@@ -1,6 +1,5 @@
 <ui:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
     <Style src="project://database/Assets/UI%20Toolkit/Panel/PanelStyle.uss?fileID=7433441132597879392&amp;guid=4371b5b2c81621242bc382ea26c5ab6f&amp;type=3#PanelStyle"/>
-    <Style src="project://database/Assets/UI%20Toolkit/ForceVector/ForceVectorStyle.uss?fileID=7433441132597879392&amp;guid=d32c6570598eb0d46a942ff50a90f60f&amp;type=3#ForceVectorStyle"/>
     <ui:VisualElement name="HingeInfoPanel" class="root-container" style="top: 648px; right: 1095px;">
         <ui:VisualElement name="Marker" class="marker-base">
             <ui:VisualElement class="marker-dot"/>
@@ -27,13 +26,6 @@
                 <ui:Button text="ĐÓNG" name="BtnClose" class="btn-secondary"/>
                 <ui:Button text="XÁC NHẬN" class="btn-primary"/>
             </ui:VisualElement>
-        </ui:VisualElement>
-    </ui:VisualElement>
-    <ui:VisualElement name="ForceContainer" class="force-container" style="top: 615px; right: 1032px;">
-        <ui:Label text="0.0 N" name="ForceLabel" class="force-label"/>
-        <ui:VisualElement name="ArrowBody" class="arrow-body">
-            <ui:VisualElement name="ArrowShaft" class="arrow-shaft"/>
-            <ui:VisualElement name="ArrowHead" class="arrow-head"/>
         </ui:VisualElement>
     </ui:VisualElement>
 </ui:UXML>
