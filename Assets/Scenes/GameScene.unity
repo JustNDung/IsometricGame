@@ -833,6 +833,7 @@ GameObject:
   m_Component:
   - component: {fileID: 112416295}
   - component: {fileID: 112416296}
+  - component: {fileID: 112416297}
   m_Layer: 0
   m_Name: DoorHingeInfoUI
   m_TagString: Untagged
@@ -878,6 +879,18 @@ MonoBehaviour:
   m_PivotReferenceSize: 0
   m_Pivot: 0
   m_WorldSpaceCollider: {fileID: 0}
+--- !u!114 &112416297
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 112416294}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 07a1754319a31ac408559f9fe5acf154, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::MarkerPanelController
 --- !u!1 &127724489
 GameObject:
   m_ObjectHideFlags: 0

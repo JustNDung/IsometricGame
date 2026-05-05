@@ -1,18 +1,17 @@
-<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
+<ui:UXML xmlns:ui="UnityEngine.UIElements" editor-extension-mode="False">
     <Style src="project://database/Assets/UI%20Toolkit/Panel/PanelStyle.uss?fileID=7433441132597879392&amp;guid=4371b5b2c81621242bc382ea26c5ab6f&amp;type=3#PanelStyle"/>
-    <ui:VisualElement class="panel-container" style="position: absolute; top: 289px; left: 1079px; right: 13px; width: 380px; height: -5px;">
-        <ui:VisualElement class="panel-header">
-            <ui:Label text="Hinge&#10;" class="header-title"/>
+    <ui:VisualElement class="root-container" style="top: 648px; right: 1095px;">
+        <ui:VisualElement name="Marker" class="marker-base">
+            <ui:VisualElement class="marker-dot"/>
+        </ui:VisualElement>
+        <ui:VisualElement name="InfoPanel" class="panel-container" style="top: 5px; left: -5px;">
+            <ui:Label text="THÔNG TIN HỆ THỐNG" class="header-title"/>
             <ui:VisualElement class="header-line"/>
-        </ui:VisualElement>
-        <ui:VisualElement class="panel-body">
-            <ui:Label text="Mục tiêu: Lock-on" class="info-label"/>
-            <ui:Label text="Camera: ExperimentDoor" class="info-label"/>
-            <ui:Label text="Trạng thái: Hoạt động bình thường. Hệ thống đang quét dữ liệu từ cảm biến." class="description-text"/>
-        </ui:VisualElement>
-        <ui:VisualElement class="panel-footer">
-            <ui:Button text="ĐÓNG" class="btn-secondary"/>
-            <ui:Button text="XÁC NHẬN" class="btn-primary"/>
+            <ui:Label text="Trạng thái: Đang kết nối..." class="description-text"/>
+            <ui:VisualElement class="panel-footer">
+                <ui:Button text="ĐÓNG" name="BtnClose" class="btn-secondary"/>
+                <ui:Button text="XÁC NHẬN" class="btn-primary"/>
+            </ui:VisualElement>
         </ui:VisualElement>
     </ui:VisualElement>
 </ui:UXML>
