@@ -1,0 +1,86 @@
+/* Container chính */
+.panel-container {
+    background-color: rgba(30, 41, 59, 0.95); /* Slate 800 với độ mờ nhẹ */
+    border-radius: 20px;
+    border-width: 1.5px;
+    border-color: rgba(99, 102, 241, 0.3); /* Indigo 500 nhạt */
+    padding: 24px;
+    width: 450px;
+    flex-shrink: 0;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+}
+
+/* Header */
+.panel-header {
+    margin-bottom: 20px;
+}
+
+.header-title {
+    color: #818CF8; /* Indigo 400 */
+    font-size: 20px;
+    -unity-font-style: bold;
+    letter-spacing: 1px;
+}
+
+.header-line {
+    height: 2px;
+    background-color: #6366F1;
+    width: 60px;
+    margin-top: 8px;
+    border-radius: 1px;
+}
+
+/* Body */
+.panel-body {
+    margin-bottom: 30px;
+}
+
+.info-label {
+    color: #F8FAFC;
+    font-size: 15px;
+    margin-bottom: 6px;
+    -unity-font-style: bold;
+}
+
+.description-text {
+    color: #94A3B8; /* Slate 400 */
+    font-size: 14px;
+    white-space: normal;
+    line-height: 1.5;
+}
+
+/* Footer Buttons */
+.panel-footer {
+    flex-direction: row;
+    justify-content: flex-end;
+    gap: 12px;
+}
+
+.btn-primary {
+    background-color: #6366F1;
+    color: white;
+    border-radius: 10px;
+    padding: 10px 20px;
+    border-width: 0;
+    -unity-font-style: bold;
+    transition-duration: 0.2s;
+}
+
+.btn-primary:hover {
+    background-color: #4F46E5;
+    scale: 1.05;
+}
+
+.btn-secondary {
+    background-color: transparent;
+    color: #94A3B8;
+    border-width: 1px;
+    border-color: #334155;
+    border-radius: 10px;
+    padding: 10px 20px;
+}
+
+.btn-secondary:hover {
+    background-color: rgba(255, 255, 255, 0.05);
+    color: white;
+}
