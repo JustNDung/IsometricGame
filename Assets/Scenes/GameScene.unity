@@ -4527,6 +4527,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c20ac4759a1a1534ca1453c731d747e5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DoorExperimentUIController
+  currentForce: {x: 0, y: 0}
+  hingeStatus: "\u1ED4n \u0111\u1ECBnh"
+  handleStatus: "S\u1EB5n s\xE0ng"
 --- !u!1001 &1590477190
 PrefabInstance:
   m_ObjectHideFlags: 0
