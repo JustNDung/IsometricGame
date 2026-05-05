@@ -1,0 +1,17 @@
+<ui:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/UI%20Toolkit/Panel/PanelStyle.uss?fileID=7433441132597879392&amp;guid=4371b5b2c81621242bc382ea26c5ab6f&amp;type=3#PanelStyle"/>
+    <ui:VisualElement name="VisualElement" class="root-container" style="top: 466px; right: 1202px; height: 218px;">
+        <ui:VisualElement name="Marker" class="marker-base">
+            <ui:VisualElement class="marker-dot"/>
+        </ui:VisualElement>
+        <ui:VisualElement name="InfoPanel" class="panel-container" style="top: -279px; left: -105px; align-self: auto;">
+            <ui:Label text="THÔNG TIN HỆ THỐNG" class="header-title"/>
+            <ui:VisualElement class="header-line"/>
+            <ui:Label text="Trạng thái: Đang kết nối..." class="description-text"/>
+            <ui:VisualElement class="panel-footer">
+                <ui:Button text="ĐÓNG" name="BtnClose" class="btn-secondary"/>
+                <ui:Button text="XÁC NHẬN" class="btn-primary"/>
+            </ui:VisualElement>
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>
