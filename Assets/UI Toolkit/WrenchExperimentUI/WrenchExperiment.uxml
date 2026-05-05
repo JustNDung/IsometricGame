@@ -1,0 +1,23 @@
+<ui:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/UI%20Toolkit/ForceVector/ForceVector.uss?fileID=7433441132597879392&amp;guid=86b68e4863dd60045b9c8c6c95c0e0b6&amp;type=3#ForceVector"/>
+    <ui:VisualElement name="F1a" class="force-vector-container" style="top: 366px; left: 642px; height: 52px; width: 150px; rotate: -90deg;">
+        <ui:VisualElement name="force-vector-line" class="force-vector-line" style="rotate: 0 0 0 0;"/>
+        <ui:VisualElement name="force-vector-arrow" class="force-vector-arrow"/>
+        <ui:Label name="force-vector-label" text="F = 0" class="force-vector-label"/>
+    </ui:VisualElement>
+    <ui:VisualElement name="F2a" class="force-vector-container" style="top: 581px; left: 747px; height: 52px; width: 150px; rotate: -90deg; right: -188px;">
+        <ui:VisualElement name="force-vector-line" class="force-vector-line" style="rotate: 0 0 0 0;"/>
+        <ui:VisualElement name="force-vector-arrow" class="force-vector-arrow"/>
+        <ui:Label name="force-vector-label" text="F = 0" class="force-vector-label"/>
+    </ui:VisualElement>
+    <ui:VisualElement name="F1b" class="force-vector-container" style="top: 357px; left: 1537px; height: 52px; width: 150px; rotate: -90deg; right: -410px;">
+        <ui:VisualElement name="force-vector-line" class="force-vector-line" style="rotate: 0 0 0 0;"/>
+        <ui:VisualElement name="force-vector-arrow" class="force-vector-arrow"/>
+        <ui:Label name="force-vector-label" text="F = 0" class="force-vector-label"/>
+    </ui:VisualElement>
+    <ui:VisualElement name="F2b" class="force-vector-container" style="top: 572px; left: 1537px; height: 52px; width: 150px; rotate: -90deg; right: -410px;">
+        <ui:VisualElement name="force-vector-line" class="force-vector-line" style="rotate: 0 0 0 0;"/>
+        <ui:VisualElement name="force-vector-arrow" class="force-vector-arrow"/>
+        <ui:Label name="force-vector-label" text="F = 0" class="force-vector-label"/>
+    </ui:VisualElement>
+</ui:UXML>
