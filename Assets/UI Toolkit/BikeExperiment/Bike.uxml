@@ -1,0 +1,26 @@
+<ui:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/UI%20Toolkit/Panel/PanelStyle.uss?fileID=7433441132597879392&amp;guid=4371b5b2c81621242bc382ea26c5ab6f&amp;type=3#PanelStyle"/>
+    <ui:VisualElement class="root-container" style="top: 252px; right: 330px;">
+        <ui:VisualElement name="Marker" class="marker-base">
+            <ui:VisualElement class="marker-dot"/>
+        </ui:VisualElement>
+        <ui:VisualElement name="InfoPanel" class="panel-container" style="top: 5px; left: -5px;">
+            <ui:Label text="Mô hình Sọ người " class="header-title"/>
+            <ui:VisualElement class="header-line"/>
+            <ui:Label text="Mô hình mô phỏng thực hiện tính toán các lực lên " class="description-text"/>
+        </ui:VisualElement>
+    </ui:VisualElement>
+    <ui:VisualElement name="VisualElement" class="root-container" style="top: -122px; right: -314px; height: 266px;">
+        <ui:VisualElement name="Marker" class="marker-base">
+            <ui:VisualElement class="marker-dot"/>
+        </ui:VisualElement>
+        <ui:VisualElement name="InfoPanel" class="panel-container" style="top: 5px; left: -5px;">
+            <ui:Label text="Biểu diễn lực" class="header-title"/>
+            <ui:VisualElement class="header-line"/>
+            <ui:Label text="Lực đẩy của bàn chần F1 :  " class="description-text"/>
+            <ui:Label text="Lực căng của dây xích F2 :  " class="description-text"/>
+            <ui:Label text="Cánh tay đòn của đùi đĩa d1  :  " class="description-text"/>
+            <ui:Label text="Cánh tay đòn bán kính của đĩa xích d2 :  " class="description-text"/>
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

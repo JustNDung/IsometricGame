@@ -1,0 +1,16 @@
+<ui:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/UI%20Toolkit/Panel/PanelStyle.uss?fileID=7433441132597879392&amp;guid=4371b5b2c81621242bc382ea26c5ab6f&amp;type=3#PanelStyle"/>
+    <ui:VisualElement name="f" class="root-container" style="top: 543px; right: 1071px; height: 247px;">
+        <ui:VisualElement name="Marker" class="marker-base">
+            <ui:VisualElement class="marker-dot"/>
+        </ui:VisualElement>
+        <ui:VisualElement name="InfoPanel" class="panel-container" style="top: 5px; left: -5px; height: 214px;">
+            <ui:Label text="Biểu diễn lực " class="header-title"/>
+            <ui:VisualElement class="header-line"/>
+            <ui:Label text="Lực cơ cổ F1 : " class="description-text"/>
+            <ui:Label text="Cánh tay đòn Cơ d1  : " class="description-text"/>
+            <ui:Label text="Lực trọng trường F2  : " class="description-text"/>
+            <ui:Label text="Cánh tay đòn Trọng trường d2 : " class="description-text" style="height: 26px; width: 333px;"/>
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>
