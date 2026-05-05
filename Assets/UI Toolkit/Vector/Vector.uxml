@@ -1,0 +1,8 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
+    <Style src="project://database/Assets/UI%20Toolkit/Vector/VectorStyle.uss?fileID=7433441132597879392&amp;guid=b705f7fbf12710f4b90a8cbc757d16ef&amp;type=3#VectorStyle"/>
+    <ui:VisualElement name="vector-container" class="vector-container">
+        <ui:VisualElement name="line" class="vector-line" style="width: 275px;"/>
+        <ui:VisualElement name="handle-start" class="vector-handle"/>
+        <ui:VisualElement name="handle-end" class="vector-handle" style="top: 1px; left: 281px;"/>
+    </ui:VisualElement>
+</ui:UXML>
